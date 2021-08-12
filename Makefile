@@ -375,7 +375,7 @@ AS		= $(CROSS_COMPILE)as
 LD		= $(CROSS_COMPILE)ld
 LDGOLD		= $(CROSS_COMPILE)ld.gold
 #CC		= $(CROSS_COMPILE)gcc
-CC              = /home/ivan/Kernel_Tools/clang-r416183b1/bin/clang
+CC              = /home/ivan/Kernel_Tools/toolchain_clang/bin/clang
 CPP		= $(CC) -E
 AR		= $(CROSS_COMPILE)ar
 NM		= $(CROSS_COMPILE)nm
@@ -510,7 +510,7 @@ endif
 ifeq ($(cc-name),clang)
 ifneq ($(CROSS_COMPILE),)
 #CLANG_TRIPLE	?= $(CROSS_COMPILE)
-CLANG_TRIPLE ?= /home/ivan/Kernel_Tools/clang-r416183b1/bin/aarch64-linux-gnu-
+CLANG_TRIPLE ?= /home/ivan/Kernel_Tools/toolchain_clang/bin/aarch64-linux-gnu-
 CLANG_TARGET	:= --target=$(notdir $(CLANG_TRIPLE:%-=%))
 GCC_TOOLCHAIN	:= $(realpath $(dir $(shell which $(LD)))/..)
 $(info GCC_TOOLCHAIN - $(GCC_TOOLCHAIN))
